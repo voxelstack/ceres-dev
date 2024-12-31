@@ -1,0 +1,45 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "ceres"
+collections:
+  docs:
+    output: true
+    order:
+      - playground.md
+      - basic_rendering.md
+      - literals_and_stores.md
+
+      - if.md
+      - each.md
+      - key.md
+      - await.md
+
+      - bind.md
+      - use.md
+
+      - inline_styles.md
+      - class_name.md
+
+      - boundary.md
+      - window.md
+      - document.md
+      - body.md
+      - head.md
+
+      - create_component.md
+
+      - registry.md
+sections:
+  - Introduction
+  - Directives
+  - Special props
+  - Styling
+  - Special renderables
+  - Components
+  - App state
+
+unpkg:
+  monaco: https://unpkg.com/monaco-editor@0.52.2
+  monaco-themes: https://unpkg.com/monaco-themes@0.4.4
+  typescript: https://www.unpkg.com/typescript@5.7.2
+  ceres: https://unpkg.com/@voxelstack/ceres@0.1.5

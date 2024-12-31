@@ -1,0 +1,14 @@
+<nav>
+    {% assign sections = site.docs | group_by:"section" %}
+    {% for section in site.sections %}
+        <h1>{{ section }}</h1>
+        <ul>
+            {% assign pages = sections | where:"name",section | first %}
+            {% for page in pages.items  %}
+                <li>
+                    <a href="{{ page.url }}">{{ page.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</nav>

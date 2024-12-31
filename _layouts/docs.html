@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% include doc_index.html %}
+
+<main>
+    <h1>{{ page.title }}</h1>
+
+    {{ content }}
+
+    {% include doc_navigation.html %}
+</main>
+
+<script defer>
+    document.querySelectorAll("figure > pre > code").forEach((block) => {
+        const a = document.createElement("a");
+        const icon = document.createElement("span");
+
+        a.ariaLabel = "View on playground";
+        a.className = "view-on-playground";
+        a.href = `{% link playground.html %}?source=${encodeURI(block.textContent)}`;
+        
+        a.appendChild(icon);
+        block.appendChild(a);
+    });
+</script>
