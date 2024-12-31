@@ -14,14 +14,24 @@ layout: default
 
 <script defer>
     document.querySelectorAll("figure > pre > code").forEach((block) => {
-        const a = document.createElement("a");
-        const icon = document.createElement("span");
+        const link = document.createElement("a");
 
-        a.ariaLabel = "View on playground";
-        a.className = "view-on-playground";
-        a.href = `{% link playground.html %}?source=${encodeURI(block.textContent)}`;
+        link.ariaLabel = "View on playground";
+        link.title = "View on playground";
+        link.className = "view-on-playground";
+        link.href = `{% link playground.html %}?source=${encodeURI(block.textContent)}`;
         
-        a.appendChild(icon);
-        block.appendChild(a);
+        block.appendChild(link);
+    });
+
+    document.querySelectorAll("main > h2, h3, h4, h5, h6").forEach((header) => {
+        const link = document.createElement("a");
+
+        link.ariaLabel = `{{ page.title }} · ${header.textContent}`;
+        link.title = `{{ page.title }} · ${header.textContent}`;
+        link.className = "header-link";
+        link.href = `#${header.id}`;
+        
+        header.appendChild(link);
     });
 </script>

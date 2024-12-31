@@ -8,16 +8,21 @@ body {
     font-family: $bodyFont;
 }
 
-.view-on-playground {
-    span {
-        display: inline-block;
+%icon-button {
+    display: inline-block;
 
-        width: 16px;
-        height: 16px;
-        
-        background: url("/assets/icons/playground.svg");
-        background-size: 16px 16px;
+    width: 24px;
+    height: 24px;
+    
+    opacity: 0.75;
+    &:hover {
+        opacity: 1;
     }
+}
+
+.view-on-playground {
+    @extend %icon-button;
+    background: url("/assets/icons/playground.svg");
 }
 
 pre {
@@ -25,15 +30,13 @@ pre {
 
     .view-on-playground {
         position: absolute;
-        display: block;
 
         top: 2px;
         right: 2px;
-
-        opacity: 0.75;
-        &:hover {
-            opacity: 1;
-        }
     }
 }
 
+.header-link {
+    @extend %icon-button;        
+    background: url("/assets/icons/link.svg");
+}
