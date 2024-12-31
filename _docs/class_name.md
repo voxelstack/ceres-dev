@@ -34,7 +34,7 @@ Or an object to apply all classes that are truthy.
 const colors = ["red", "green", "blue"];
 const timer = $store(0);
 const className = timer.derive((t) => ({
-    "square": t $ 2 !== 0,
+    "square": t % 2 !== 0,
     "circle": t % 2 === 0,
 }));
 setInterval(() => ++timer.value, 500);

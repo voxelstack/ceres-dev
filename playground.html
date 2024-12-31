@@ -83,7 +83,7 @@ title: "Playground"
             viewerSource.textContent = `
                 ${ceresSource}
 
-                (() => {${ts.transpile(strippedImports)}})();
+                (() => {${ts.transpile(strippedImports, { target: "ESNext" })}})();
             `;
             viewer.body.appendChild(viewerSource);
         }
