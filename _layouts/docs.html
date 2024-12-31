@@ -2,15 +2,17 @@
 layout: default
 ---
 
-{% include doc_index.html %}
+<div class="docs">
+    {% include doc_index.html %}
 
-<main>
-    <h1>{{ page.title }}</h1>
-
-    {{ content }}
-
-    {% include doc_navigation.html %}
-</main>
+    <main>
+        <h1>{{ page.title }}</h1>
+    
+        {{ content }}
+    
+        {% include doc_navigation.html %}
+    </main>    
+</div>
 
 <script defer>
     document.querySelectorAll("figure > pre > code").forEach((block) => {
@@ -26,12 +28,15 @@ layout: default
 
     document.querySelectorAll("main > h2, h3, h4, h5, h6").forEach((header) => {
         const link = document.createElement("a");
+        const icon = document.createElement("span");
 
-        link.ariaLabel = `{{ page.title }} · ${header.textContent}`;
-        link.title = `{{ page.title }} · ${header.textContent}`;
-        link.className = "header-link";
         link.href = `#${header.id}`;
+        link.innerHTML = header.outerHTML;
+
+        icon.title = `{{ page.title }} · ${header.textContent}`;
+        icon.className = "link-icon";
         
-        header.appendChild(link);
+        link.appendChild(icon);
+        header.replaceWith(link);
     });
 </script>

@@ -1,14 +1,14 @@
-<nav>
+<nav class="doc-index">
     {% assign sections = site.docs | group_by:"section" %}
     {% for section in site.sections %}
         <h1>{{ section }}</h1>
-        <ul>
+        <ol>
             {% assign pages = sections | where:"name",section | first %}
             {% for page in pages.items  %}
                 <li>
                     <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
                 </li>
             {% endfor %}
-        </ul>
+        </ol>
     {% endfor %}
 </nav>

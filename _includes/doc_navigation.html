@@ -1,13 +1,13 @@
 {% for doc_page in site.docs %}
     {% if doc_page.title == page.title %}
-        <div>
+        <div class="navigation">
             {% unless forloop.first %}
                 {% assign prev = forloop.index0 | minus: 1 %}
-                &lt;<a href="{{ site.docs[prev].url | absolute_url }}">{{ site.docs[prev].title }}</a>
+                <a href="{{ site.docs[prev].url | absolute_url }}" class="prev">{{ site.docs[prev].title }}</a>
             {% endunless %}
             {% unless forloop.last %}
                 {% assign next = forloop.index0 | plus: 1 %}
-                <a href="{{ site.docs[next].url | absolute_url }}">{{ site.docs[next].title }}</a>&gt;
+                <a href="{{ site.docs[next].url | absolute_url }}" class="next">{{ site.docs[next].title }}</a>
             {% endunless %}
         </div>
         {% break %}

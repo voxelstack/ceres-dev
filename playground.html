@@ -3,8 +3,10 @@ layout: "default"
 title: "Playground"
 ---
 
-<div id="editor" style="width: 800px; height: 600px; border: 1px solid grey"></div>
-<iframe id="viewer" title="Playground viewer" style="width: 800px; height: 600px; border: 1px solid grey"></iframe>
+<div class="playground">
+    <div id="editor"></div>
+    <iframe id="viewer"></iframe>
+</div>
 
 <script src="{{ site.unpkg.monaco }}/min/vs/loader.js"></script>
 <script src="{{ site.unpkg.typescript }}/lib/typescript.js"></script>
@@ -18,7 +20,8 @@ title: "Playground"
             language: "typescript",
             minimap: { enabled: false },
             cursorStyle: "block",
-            cursorBlinking: "solid"
+            cursorBlinking: "solid",
+            fontSize: 20
         });
         const model = editor.getModel();
         monaco.editor.setModelLanguage(model, "typescript");
@@ -60,12 +63,13 @@ title: "Playground"
         const ceresSourceRes = await fetch("{{ site.unpkg.ceres }}/build/index.js")
         const ceresSource = await ceresSourceRes.text();
 
-
         function setEditorSource(source) {
             model.setValue(source);
         }
 
         const viewer = document.getElementById("viewer").contentDocument;
+        viewer.body.style = "margin: 0; padding: 16px; color: #F0FFF0";
+
         function setViewerSource(source) {
             const strippedImports = source
                 .split("\n")

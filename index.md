@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "Home"
 ---
 
@@ -22,4 +22,3 @@ const Greeter = $createComponent<{ greeting: string }>(($props) => {
 const app = Greeter({ greeting: "Hey" });
 app.mount(document.body);
 {% endhighlight %}
-
