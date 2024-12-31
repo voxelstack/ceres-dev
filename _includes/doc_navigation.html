@@ -3,11 +3,11 @@
         <div>
             {% unless forloop.first %}
                 {% assign prev = forloop.index0 | minus: 1 %}
-                &lt;<a href="{{ site.docs[prev].url }}">{{ site.docs[prev].title }}</a>
+                &lt;<a href="{{ site.docs[prev].url | absolute_url }}">{{ site.docs[prev].title }}</a>
             {% endunless %}
             {% unless forloop.last %}
                 {% assign next = forloop.index0 | plus: 1 %}
-                <a href="{{ site.docs[next].url }}">{{ site.docs[next].title }}</a>&gt;
+                <a href="{{ site.docs[next].url | absolute_url }}">{{ site.docs[next].title }}</a>&gt;
             {% endunless %}
         </div>
         {% break %}

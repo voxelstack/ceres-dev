@@ -22,7 +22,7 @@ body {
 
 .view-on-playground {
     @extend %icon-button;
-    background: url("/assets/icons/playground.svg");
+    background: url("/ceres-dev/assets/icons/playground.svg");
 }
 
 pre {
@@ -38,5 +38,5 @@ pre {
 
 .header-link {
     @extend %icon-button;        
-    background: url("/assets/icons/link.svg");
+    background: url("/ceres-dev/assets/icons/link.svg");
 }
