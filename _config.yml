@@ -29,6 +29,9 @@ collections:
       - create_component.md
 
       - registry.md
+
+      - faq.md
+      - todo.md
 sections:
   - Introduction
   - Directives
@@ -37,6 +40,7 @@ sections:
   - Special renderables
   - Components
   - App state
+  - Notes
 
 unpkg:
   monaco: https://unpkg.com/monaco-editor@0.52.2

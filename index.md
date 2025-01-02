@@ -22,3 +22,8 @@ const Greeter = $createComponent<{ greeting: string }>(($props) => {
 const app = Greeter({ greeting: "Hey" });
 app.mount(document.body);
 {% endhighlight %}
+
+## About
+ceres is a WIP framework I'm writing for fun using some of my free time. It's meant to be used on my personal website.
+
+It is still being actively worked on. See the [FAQ]({% link _docs/faq.md %}) and [TODO]({% link _docs/todo.md %}) pages.
